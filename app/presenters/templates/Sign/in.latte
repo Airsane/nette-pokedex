@@ -1,0 +1,16 @@
+{block content}
+    <div class="container-fluid">
+        <h1><span n:block="title"}>Login</span> <span style="color:black" id="pokemonCount"></span></h1>
+        <form n:name=signInForm class=form>
+            <div class="form-group">
+                <label n:name=username>Username:</label>
+                <input type="text" n:name=username class="form-control" placeholder="Username" required="">
+            </div>
+            <div  class="form-group">
+                <label n:name=password>Password:</label>
+                <input type="password" n:name=password class="form-control" placeholder="Password" required="">
+            </div>
+            <p><input n:name=send class="btn btn-default">
+        </form>
+    </div>
+{/block}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{$basePath}/res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{$basePath}/res/css/bootstrap-select.css"/>
+    <link rel="stylesheet" href="{$basePath}/res/fontawesome/css/all.css">
+    <link rel="stylesheet" href="{$basePath}/res/css/index.css">
+    <link rel="stylesheet" href="{$basePath}/res/css/pokemon.css">
+    <link rel="stylesheet" href="{$basePath}/res/Rpg-Awesome-master/css/rpg-awesome.min.css">
+    <script src="{$basePath}/res/js/jquery-3.3.1.min.js"></script>
+    <script src="{$basePath}/res/js/popper.min.js"></script>
+    <script src="{$basePath}/res/js/bootstrap.bundle.min.js"></script>
+    <script src="{$basePath}/res/js/bootstrap-select.min.js"></script>
+    <script src="{$basePath}/res/js/pokemons.js"></script>
+    <title>{ifset title}{include title|stripHtml} | {/ifset}Pokedex</title>
+</head>
+
+
+<body>
+<div class="wrapper">
+
+    <div id="sidebar" style="width:200px;">
+        <ul class="list-unstyled components">
+            <li>
+                {if $user->loggedIn}
+                    <a n:class="$presenter->isLinkCurrent() ? active"  n:href="Profile:show"><i class="fa fa-user"></i>
+                        Trainer Profile</a>
+                    <a n:class="$presenter->isLinkCurrent() ? active"  n:href="Pokedex:default"><span
+                                class="icon-pokeball"></span> Pokedex</a>
+                {else}
+                    <a n:class="$presenter->isLinkCurrent() ? active" n:href="Sign:in"><i
+                                class="fas fa-sign-in-alt"></i> Login</a>
+                    <a n:class="$presenter->isLinkCurrent() ? active"  n:href="Sign:up"><i
+                                class="fas fa-user-plus"></i></span> Register</a>
+                {/if}
+                <a n:class="$presenter->isLinkCurrent() ? active" n:href="Homepage:default"><span
+                            class="icon-pokeball"></span> Pokemons</a>
+                <a href=""><i class="fa fa-chart-bar"></i> Statistics</a>
+                <a n:if="$user->loggedIn" n:href="Sign:out"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+            </li>
+        </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="col-md-12">
+            <br>
+            <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-exclamation-circle"></i> <span>{$flash->message}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {include content}
+    </div>
+
+
+    {block scripts}
+        <script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+    {/block}
+</div>
+</body>
+</html>

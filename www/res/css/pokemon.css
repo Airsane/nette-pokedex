@@ -1,0 +1,62 @@
+.type {
+    padding: 5px;
+    border-radius: 5px;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.stats-table th {
+    white-space: nowrap;
+    width: 56px;
+    text-align: right;
+}
+
+.type:hover {
+    color: #fff;
+}
+
+.vitals-table {
+    width: 100%;
+}
+
+.vitals-table th,
+.vitals-table td {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #f0f0f0;
+}
+
+.cell-barchart {
+    width: 100%;
+    min-width: 150px;
+}
+
+.cell-num,
+.cell-total {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.vitals-table th,
+.vitals-table td {
+    padding: 4px 10px;
+}
+
+.barchart-bar {
+    height: .75rem;
+    border-radius: 4px;
+    border: 1px solid #737373;
+    border-color: rgba(0, 0, 0, 0.15);
+    background-color: red;
+}
+
+.profile {
+
+}
+
+.profile .avatar {
+    width: 250px;
+    height: 250px;
+}

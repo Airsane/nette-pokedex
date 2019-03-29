@@ -1,0 +1,23 @@
+{block content}
+    <div class="container-fluid">
+        <h1><span n:block="title"}>Register</span> <span style="color:black" id="pokemonCount"></span></h1>
+        <form n:name=registerForm class=form>
+            <div class="form-group">
+                <label n:name=username>Username:</label>
+                <input type="text" n:name=username class="form-control" placeholder="Username" required="">
+            </div>
+            <div class="form-group">
+                <label n:name=password>Password:</label>
+                <input type="password" n:name=password class="form-control" placeholder="Password" required="">
+            </div>
+            <div class="form-group">
+                <label n:name=password2>Password Verify:</label>
+                <input type="password" n:name=password2 class="form-control" placeholder="Password Verify" required="">
+            </div>
+            <div class="form-group">
+                <label n:name=team>Team:</label>
+                <select class="form-control" n:name=team></select></div>
+            <p><input n:name=send class="btn btn-default"></p>
+        </form>
+    </div>
+{/block}

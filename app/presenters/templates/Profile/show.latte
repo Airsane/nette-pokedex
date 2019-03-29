@@ -1,0 +1,26 @@
+{block content}
+    <div class="container-fluid">
+        <div class="row profile">
+            <div class="col-md-4"><h1 n:block="title">{$trainer->username|firstUpper}</h1>
+                <img class="avatar" src="{$trainer->avatar}" alt="">
+            </div>
+            <div class="col-md-8"><img class="test" style="width: 100%; max-height: 250px; fill: red"
+                                       src="{$basePath}/res/img/logo-{$trainer->name}.svg" alt="">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h2><span style="color: #b1b1b1;">Pokemons in pokedex:</span> {$pokemonsCount}  </h2>
+        </div>
+        <hr>
+        <a n:href="Pokedex:default $trainer->id">
+            <div class="col-md-12 row">
+
+                <div n:foreach="$pokemons as $pokemon" class="col-md-3" style="margin:auto;">
+                    <img width="100%"
+                         src="{file_exists("./res/img/pokemons/".$pokemon->id.".svg") ? "{$basePath}/res/img/pokemons/{$pokemon ->id}.svg": $pokemon->large}"
+                         alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+{/block}
